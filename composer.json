@@ -9,11 +9,12 @@
 		"silverstripe/framework": "^4"
 	},
     "replace": {
-        "dynamic/silverstripe-elemental-customer-service": "*"
+        "dynamic/silverstripe-elemental-customer-service": "*",
+        "bigfork/silverstripe-mapboxfield": "*"
     },
 	"autoload": {
 		"psr-4": {
-			"Bigfork\\SilverStripeMapboxField\\": "src/"
+			"A2nt\\SilverStripeMapboxField\\": "src/"
 		}
 	},
 	"extra": {

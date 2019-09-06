@@ -1,6 +1,6 @@
 <?php
 
-namespace Bigfork\SilverStripeMapboxField;
+namespace A2nt\SilverStripeMapboxField;
 
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Core\Extension;
