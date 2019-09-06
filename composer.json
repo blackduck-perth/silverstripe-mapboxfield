@@ -8,6 +8,9 @@
 		"silverstripe/admin": "^1",
 		"silverstripe/framework": "^4"
 	},
+    "replace": {
+        "dynamic/silverstripe-elemental-customer-service": "*"
+    },
 	"autoload": {
 		"psr-4": {
 			"Bigfork\\SilverStripeMapboxField\\": "src/"
