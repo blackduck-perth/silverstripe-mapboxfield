@@ -1,5 +1,5 @@
 {
-	"name": "bigfork/silverstripe-mapboxfield",
+	"name": "a2nt/silverstripe-mapboxfield",
 	"type": "silverstripe-vendormodule",
 	"description": "Mapbox CMS field for SilverStripe 4",
 	"keywords": ["silverstripe", "map", "mapbox"],
