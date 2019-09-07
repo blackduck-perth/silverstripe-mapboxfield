@@ -3,8 +3,10 @@
 namespace A2nt\SilverStripeMapboxField;
 
 use http\Exception\InvalidArgumentException;
+use SilverStripe\Core\Config\Config;
 use SilverStripe\Forms\CompositeField;
 use SilverStripe\Forms\HiddenField;
+use Symbiote\Addressable\MapboxGeocodeService;
 
 class MapboxField extends CompositeField
 {
@@ -18,6 +20,14 @@ class MapboxField extends CompositeField
 
     private $curr_style;
 
+    public static function getAccessToken()
+    {
+        $config = MapboxField::config();
+
+        return $config->access_token
+            ?: Config::inst()->get(MapboxGeocodeService::class, 'mapbox_api_key');
+    }
+
     /**
      * @param string $name
      * @param string $title
@@ -28,8 +38,8 @@ class MapboxField extends CompositeField
     {
         $cfg = self::config();
         // check access_token
-        if(!$cfg->get('access_token')) {
-            return new \ErrorException(self::class.': Please set Mapbox.com Access token');
+        if (!self::getAccessToken()) {
+            return user_error(self::class.': Please set Mapbox.com Access token');
         }
 
         $this->curr_style = $cfg->get('map_style');

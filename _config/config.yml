@@ -1,6 +1,18 @@
 ---
 Name: silverstripe-mapboxfield
 ---
+
+SilverStripe\Core\Injector\Injector:
+  A2nt\SilverStripeMapboxField\MarkerExtension:
+    properties:
+      geocoder: %$Symbiote\Addressable\MapboxGeocodeService
+  Symbiote\Addressable\GeocodeServiceInterface:
+    class: Symbiote\Addressable\MapboxGeocodeService
+
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - A2nt\SilverStripeMapboxField\SiteConfigExtension
+
 A2nt\SilverStripeMapboxField\MapboxField:
   access_token: ''
   map_style: 'mapbox://styles/mapbox/basic-v9'
