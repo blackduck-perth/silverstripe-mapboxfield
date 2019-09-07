@@ -1,7 +1,7 @@
 {
 	"name": "a2nt/silverstripe-mapboxfield",
 	"type": "silverstripe-vendormodule",
-	"description": "Mapbox CMS field for SilverStripe 4",
+	"description": "Description Mapbox CMS field, Geocoding and Frontend UI for SilverStripe 4",
 	"keywords": ["silverstripe", "map", "mapbox"],
 	"license": "BSD-3-Clause",
 	"replace": {
