@@ -10,6 +10,7 @@ SilverStripe\Core\Injector\Injector:
     class: Symbiote\Addressable\MapboxGeocodeService
 
 SilverStripe\SiteConfig\SiteConfig:
+  map_type: "google-maps"
   extensions:
     - A2nt\SilverStripeMapboxField\SiteConfigExtension
 
