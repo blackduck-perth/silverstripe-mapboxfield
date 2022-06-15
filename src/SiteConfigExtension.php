@@ -11,6 +11,26 @@ class SiteConfigExtension extends Extension
     {
         return MapboxField::getAccessToken();
     }
+    
+     public static function MapAPIKeyFrontend(): string
+    {
+        $type = $this->owner->config()->get('map_type');
+
+        switch ($type) {
+            case 'mapbox':
+                $key = MapboxField::getAccessToken();
+                break;
+            case 'google-maps':
+                $cfg = Config::inst()->get(GoogleMapField::class, 'default_options');
+                $key = $cfg['api_key'];
+                break;
+            default:
+                $key = '';
+                break;
+        }
+
+        return $key;
+    }
 
     public function MapStyle()
     {
