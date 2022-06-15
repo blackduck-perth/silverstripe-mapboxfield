@@ -4,6 +4,7 @@
 namespace A2nt\SilverStripeMapboxField;
 
 use SilverStripe\Core\Extension;
+use SilverStripe\Core\Config\Config;
 
 class SiteConfigExtension extends Extension
 {
