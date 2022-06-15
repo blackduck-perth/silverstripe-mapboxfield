@@ -12,7 +12,7 @@ class SiteConfigExtension extends Extension
         return MapboxField::getAccessToken();
     }
     
-     public static function MapAPIKeyFrontend(): string
+    public function MapAPIKeyFrontend(): string
     {
         $type = $this->owner->config()->get('map_type');
 
