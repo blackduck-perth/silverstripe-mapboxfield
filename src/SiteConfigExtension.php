@@ -23,7 +23,7 @@ class SiteConfigExtension extends Extension
                 break;
             case 'google-maps':
                 $cfg = Config::inst()->get(GoogleMapField::class, 'default_options');
-                $key = $cfg['api_key'];
+                $key = isset($cfg['api_key']) ? $cfg['api_key'] : '';
                 break;
             default:
                 $key = '';
