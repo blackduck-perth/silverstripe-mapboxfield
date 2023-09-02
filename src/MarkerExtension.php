@@ -4,6 +4,7 @@
 namespace A2nt\SilverStripeMapboxField;
 
 use SilverStripe\Forms\CheckboxField;
+use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\FieldList;
 use Symbiote\Addressable\Geocodable;
 use Symbiote\Addressable\Addressable;
@@ -36,19 +37,20 @@ class MarkerExtension extends Geocodable
         $fields->addFieldsToTab('Root.Map', [
             CheckboxField::create('LatLngOverride', 'Override Latitude and Longitude?')
                 ->setDescription('Check this box and save to be able to set the latitude and longitude manually.'),
-        ]);
-        #Show map, or coordinates if override is ticked.
-        if ($record->LatLngOverride) {
-            $fields->addFieldsToTab('Root.Map', [
-                TextField::create('Lat', 'Latitude'),
-                TextField::create('Lng', 'Longitude'),
             ]);
-        }
-        else {
-            $fields->addFieldsToTab('Root.Map', [
-                MapboxField::create('Map', 'Choose a location', 'Lat', 'Lng'),
-            ]);
-        }
+			
+			#Show map, or coordinates if override is ticked.
+            if ($record->LatLngOverride) {
+                $fields->addFieldsToTab('Root.Map', [
+                    TextField::create('Lat', 'Latitude'),
+                    TextField::create('Lng', 'Longitude'),
+                ]);
+            }
+            else {
+                $fields->addFieldsToTab('Root.Map', [
+                    MapboxField::create('Map', 'Choose a location', 'Lat', 'Lng'),
+                ]);
+            }
     }
 
     public function getDirectionsURL()
